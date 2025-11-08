@@ -1,0 +1,1381 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Familia: Célula Vital de la Sociedad</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-teal: #0d9488;
+            --bright-teal: #14b8a6;
+            --dark-teal: #134e4a;
+            --light-teal: #99f6e4;
+            --bg-teal: #f0fdfa;
+            --dark: #222;
+            --light-bg: #f8f9fa;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+            color: var(--dark);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #ffffff 60%, #f0fdfa 100%);
+            padding: 3rem 0;
+            text-align: center;
+            border-radius: 1.5rem;
+            margin: 2rem auto;
+            max-width: 1000px;
+            box-shadow: 0 8px 40px rgba(13, 148, 136, 0.15);
+            animation: fadeIn 1s ease-in;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            color: #000000;
+            font-size: 2.8rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            animation: fadeInDown 1.2s;
+        }
+        
+        /* Animación de letras individuales */
+        .hero-title span,
+        .section-title span {
+            display: inline-block;
+            animation: letterBounce 0.5s ease-in-out;
+            animation-fill-mode: both;
+        }
+        
+        .hero-title:hover span,
+        .section-title:hover span {
+            animation: wave 1s ease-in-out infinite;
+        }
+        
+        @keyframes letterBounce {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px) rotate(-10deg);
+            }
+            50% {
+                transform: translateY(5px) rotate(2deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotate(0);
+            }
+        }
+        
+        @keyframes wave {
+            0%, 100% {
+                transform: translateY(0) rotate(0);
+            }
+            25% {
+                transform: translateY(-10px) rotate(3deg);
+                color: var(--primary-teal);
+            }
+            75% {
+                transform: translateY(-5px) rotate(-3deg);
+                color: var(--dark-teal);
+            }
+        }
+        
+        /* Animación de gradiente en texto */
+        .animated-text {
+            background: linear-gradient(90deg, #000, var(--primary-teal), var(--dark-teal), #000);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmerText 3s linear infinite;
+        }
+        
+        @keyframes shimmerText {
+            to {
+                background-position: 200% center;
+            }
+        }
+        
+        /* Efecto typing para subtítulos */
+        .typing-effect {
+            overflow: hidden;
+            border-right: 3px solid var(--primary-teal);
+            white-space: nowrap;
+            animation: typing 3s steps(40) 1s forwards, blink 0.75s step-end infinite;
+            width: 0;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        
+        /* Efecto glitch en hover */
+        .glitch-text:hover {
+            animation: glitch 0.3s ease-in-out;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            33% { transform: translate(-2px, 2px); color: #ff0000; }
+            66% { transform: translate(2px, -2px); color: var(--primary-teal); }
+        }
+        
+        /* Efecto neon en títulos */
+        .neon-text {
+            animation: neonGlow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes neonGlow {
+            from {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px var(--primary-teal), 0 0 20px var(--primary-teal);
+            }
+            to {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px var(--primary-teal), 0 0 40px var(--primary-teal), 0 0 50px var(--primary-teal);
+            }
+        }
+        
+        /* Efecto de letra flotante */
+        .float-letter {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .float-letter:nth-child(even) {
+            animation-delay: 0.5s;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Rainbow text effect */
+        .rainbow-text {
+            background: linear-gradient(90deg, 
+                #ff0000 0%, 
+                #ff7f00 16.67%, 
+                #ffff00 33.33%, 
+                #00ff00 50%, 
+                #0000ff 66.67%, 
+                #4b0082 83.33%, 
+                #9400d3 100%
+            );
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: rainbow 3s linear infinite;
+        }
+        
+        @keyframes rainbow {
+            to { background-position: 200% center; }
+        }
+        
+        .institution-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .institution-info p {
+            margin: 0.5rem 0;
+            line-height: 1.8;
+        }
+        
+        .hero-image {
+            max-width: 700px;
+            width: 100%;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 40px rgba(13, 148, 136, 0.3);
+            border: 4px solid var(--primary-teal);
+            margin: 2rem auto;
+            transition: transform 0.4s, box-shadow 0.4s;
+            object-fit: cover;
+            height: 400px;
+        }
+        
+        .hero-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 60px rgba(13, 148, 136, 0.5);
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 4rem 3rem;
+            margin: 3rem auto;
+            max-width: 1100px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+            border-left: 6px solid var(--primary-teal);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(13, 148, 136, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .content-section:hover::before {
+            left: 100%;
+        }
+        
+        .content-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-teal), transparent);
+            border-radius: 1.2rem 1.2rem 0 0;
+        }
+        
+        .content-section:hover {
+            box-shadow: 0 20px 60px rgba(13, 148, 136, 0.35);
+            transform: translateY(-12px) scale(1.01);
+            border-left-width: 8px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            color: #000000;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 2.5rem;
+            margin-top: 1rem;
+            text-align: center;
+            animation: fadeInDown 1s;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid #f0fdfa;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .section-title:hover {
+            transform: scale(1.05);
+            color: var(--primary-teal);
+            text-shadow: 2px 2px 8px rgba(13, 148, 136, 0.3);
+        }
+        
+        .section-title .section-icon {
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .section-subtitle {
+            color: var(--dark-teal);
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--primary-teal);
+            animation: slideInLeft 0.8s ease;
+            transition: all 0.3s ease;
+        }
+        
+        .section-subtitle:hover {
+            padding-left: 2rem;
+            border-left-width: 6px;
+            color: #000;
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .content-section p {
+            line-height: 2;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            font-size: 1.05rem;
+            animation: fadeInUp 0.8s ease;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .content-section p:nth-child(2) { animation-delay: 0.1s; }
+        .content-section p:nth-child(3) { animation-delay: 0.2s; }
+        .content-section p:nth-child(4) { animation-delay: 0.3s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .content-section ul {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .content-section ul li {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            animation: slideInRight 0.6s ease;
+            opacity: 0;
+            animation-fill-mode: forwards;
+        }
+        
+        .content-section ul li:nth-child(1) { animation-delay: 0.1s; }
+        .content-section ul li:nth-child(2) { animation-delay: 0.2s; }
+        .content-section ul li:nth-child(3) { animation-delay: 0.3s; }
+        .content-section ul li:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .quote-box {
+            background: linear-gradient(135deg, #f0fdfa 0%, #ffffff 100%);
+            border-left: 5px solid var(--primary-teal);
+            padding: 2.5rem 3rem;
+            margin: 3rem 0;
+            border-radius: 1rem;
+            box-shadow: 0 6px 25px rgba(13, 148, 136, 0.2);
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--dark);
+            position: relative;
+            animation: fadeInLeft 1s ease;
+            line-height: 2;
+            transition: all 0.4s ease;
+        }
+        
+        .quote-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(13, 148, 136, 0.35);
+            border-left-width: 8px;
+            background: linear-gradient(135deg, #ccfbf1 0%, #ffffff 100%);
+        }
+        
+        .quote-icon {
+            color: var(--primary-teal);
+            font-size: 4rem;
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            opacity: 0.2;
+            font-weight: bold;
+        }
+        
+        .content-image {
+            max-width: 700px;
+            width: 100%;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 40px rgba(13, 148, 136, 0.25);
+            border: 4px solid var(--primary-teal);
+            margin: 3rem auto;
+            display: block;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 400px;
+            object-fit: cover;
+            animation: zoomIn 1s ease;
+            filter: brightness(0.95);
+        }
+        
+        .content-image:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 20px 80px rgba(13, 148, 136, 0.5);
+            border-width: 6px;
+            filter: brightness(1.05);
+        }
+        
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            max-width: 850px;
+            margin: 3.5rem auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 40px rgba(13, 148, 136, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .video-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 50px rgba(13, 148, 136, 0.4);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 1.2rem;
+            border: 3px solid var(--primary-teal);
+        }
+        
+        .btn-custom {
+            background: var(--primary-teal);
+            color: var(--dark);
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 0.6rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+        }
+        
+        .btn-custom:hover {
+            background: var(--dark-teal);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(13, 148, 136, 0.5);
+        }
+        
+        .info-card {
+            background: white;
+            border: 2px solid var(--primary-teal);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.15);
+            transition: all 0.4s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 8px 35px rgba(13, 148, 136, 0.3);
+        }
+        
+        .info-card h5 {
+            color: var(--primary-teal);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .opinion-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f0fdfa 100%);
+            border-left: 5px solid var(--primary-teal);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            border-radius: 1rem;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .opinion-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 35px rgba(13, 148, 136, 0.2);
+        }
+        
+        .opinion-card h5 {
+            color: var(--dark-teal);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .opinion-card p {
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+            border-top: 5px solid var(--primary-teal);
+        }
+        
+        .alert-custom {
+            background: linear-gradient(135deg, var(--primary-teal) 0%, var(--dark-teal) 100%);
+            color: white;
+            border: none;
+            border-radius: 0.8rem;
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.3);
+        }
+        
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--primary-teal), transparent);
+            margin: 2rem 0;
+        }
+        
+        ul {
+            line-height: 2;
+        }
+        
+        ul li {
+            margin: 0.8rem 0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Navbar Profesional */
+        .navbar-custom {
+            background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            padding: 0.4rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-teal);
+        }
+        
+        .navbar-custom .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-teal) !important;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+        
+        .navbar-custom .navbar-brand:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 15px var(--primary-teal);
+        }
+        
+        .navbar-custom .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 0.3rem;
+            padding: 0.4rem 0.8rem !important;
+            font-size: 0.9rem;
+            border-radius: 0.4rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .navbar-custom .nav-link:hover {
+            background: var(--primary-teal);
+            color: var(--dark) !important;
+            transform: translateY(-2px);
+        }
+        
+        .navbar-custom .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-teal);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+        
+        .navbar-custom .nav-link:hover::after {
+            width: 80%;
+        }
+        
+        .navbar-toggler {
+            border-color: var(--primary-teal) !important;
+        }
+        
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%231de782' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Barra de progreso de lectura */
+        .progress-bar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0,0,0,0.1);
+            z-index: 9999;
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-teal), var(--dark-teal));
+            width: 0%;
+            transition: width 0.2s ease;
+            box-shadow: 0 0 10px var(--primary-teal);
+        }
+        
+        /* Botón flotante scroll to top */
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-teal), var(--dark-teal));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.4);
+            z-index: 999;
+        }
+        
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top-btn:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 30px rgba(13, 148, 136, 0.6);
+        }
+        
+        /* Badge profesional */
+        .badge-custom {
+            background: linear-gradient(135deg, var(--primary-teal), var(--dark-teal));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 10px rgba(13, 148, 136, 0.3);
+            display: inline-block;
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+        
+        .badge-custom:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.5);
+            background: linear-gradient(135deg, var(--dark-teal), var(--primary-teal));
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 2px 10px rgba(13, 148, 136, 0.3);
+            }
+            50% {
+                box-shadow: 0 4px 20px rgba(13, 148, 136, 0.6);
+            }
+        }
+        
+        /* Timeline visual */
+        .timeline-indicator {
+            position: absolute;
+            left: -40px;
+            top: 20px;
+            width: 30px;
+            height: 30px;
+            background: var(--primary-teal);
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px rgba(13, 148, 136, 0.2);
+        }
+        
+        .content-section {
+            position: relative;
+        }
+        
+        /* Breadcrumbs personalizados */
+        .breadcrumb-custom {
+            background: linear-gradient(135deg, #ffffff, #f0fdfa);
+            padding: 1.2rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--primary-teal);
+        }
+        
+        /* Separador de secciones */
+        .section-divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-teal), transparent);
+            margin: 4rem auto;
+            max-width: 300px;
+            border-radius: 2px;
+        }
+        
+        /* Mejora de spacing */
+        .container {
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        
+        .breadcrumb-custom .breadcrumb-item a {
+            color: var(--dark-teal);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .breadcrumb-custom .breadcrumb-item.active {
+            color: var(--primary-teal);
+            font-weight: 600;
+        }
+        
+        /* Contador de lectura */
+        .reading-time {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+        
+        /* Iconos en títulos */
+        .section-icon {
+            color: var(--primary-teal);
+            margin-right: 0.5rem;
+            font-size: 2rem;
+            vertical-align: middle;
+        }
+        
+        /* Efecto parallax sutil */
+        .parallax-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        /* Estadísticas visuales */
+        .stat-box {
+            background: linear-gradient(135deg, var(--primary-teal), var(--dark-teal));
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.3);
+            transition: transform 0.3s;
+        }
+        
+        .stat-box:hover {
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de progreso de lectura -->
+    <div class="progress-bar-container">
+        <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+    
+    <!-- Navbar Profesional -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">
+                🏛️ La Familia
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio"><i class="bi bi-house-door"></i> Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#introduccion"><i class="bi bi-book"></i> Introducción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#plan-dios"><i class="bi bi-heart"></i> Plan de Dios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#economia"><i class="bi bi-cash-coin"></i> Economía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#juridico"><i class="bi bi-file-earmark-text"></i> Jurídico</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#estado"><i class="bi bi-building"></i> Estado</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#conclusion"><i class="bi bi-check-circle"></i> Conclusión</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#opinion"><i class="bi bi-chat-left-quote"></i> Opinión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Alerta de Bienvenida -->
+    <div class="container mt-4">
+        <div class="alert alert-custom animate__animated animate__fadeInDown" role="alert">
+            <strong><i class="bi bi-heart-fill"></i> Bienvenidos al Blog sobre la Familia</strong> — "Donde el amor encuentra su hogar y la sociedad construye su futuro"
+            <span class="reading-time float-end">
+                <i class="bi bi-clock"></i> Tiempo de lectura: ~15 min
+            </span>
+        </div>
+    </div>
+
+    <!-- Portada Institucional -->
+    <div class="container" id="inicio">
+        <div class="hero-section animate__animated animate__fadeIn">
+            <h1 class="hero-title">LA FAMILIA: CÉLULA VITAL DE LA SOCIEDAD<br>Y SANTUARIO DEL AMOR DIVINO</h1>
+            
+            <div class="institution-info">
+                <img src="images/LOGO-UNICAES-300x300.jpg" 
+                     alt="Logo UNICAES" 
+                     style="width: 120px; height: 120px; margin: 0 auto 1rem; display: block;"
+                     onerror="this.style.display='none'">
+                
+                <p><strong>UNIVERSIDAD CATÓLICA DE EL SALVADOR</strong></p>
+                <p>FACULTAD DE INGENIERÍA Y ARQUITECTURA</p>
+                <p>CICLO 02 - 2025</p>
+                <p><strong>ASIGNATURA:</strong> Ética Social</p>
+                <p><strong>DOCENTE:</strong> Licda. Rosalina del Carmen Herrera Rivera</p>
+                <p><strong>ESTUDIANTES:</strong></p>
+                <p style="margin-left: 2rem; line-height: 2;">
+                    Acuña Posada, Oswaldo Miguel<br>
+                    Carballo Sánchez, Karen Jazmín<br>
+                    Cardona Rodríguez, Walter Alberto<br>
+                    España Delgado, Verónica Lizbeth
+                +</p>
+                <p><strong>Santa Ana, 11 de noviembre de 2025</strong></p>
+            </div>
+            
+            <img src="images/familia_atardecer.jpg" 
+                 alt="Familia unida en el atardecer" 
+                 class="hero-image animate__animated animate__zoomIn"
+                 onerror="this.src='https://via.placeholder.com/700x400/1de782/ffffff?text=Familia+Unida'">
+            
+            <div class="mt-4">
+                <a href="#introduccion" class="btn btn-custom btn-lg">
+                    <i class="bi bi-book-half"></i> Comenzar Lectura
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="container">
+        <nav aria-label="breadcrumb" class="breadcrumb-custom animate__animated animate__fadeIn">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="#inicio"><i class="bi bi-house-door"></i> Inicio</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Contenido Principal</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Cards Informativos -->
+    <div class="container mb-4">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="info-card animate__animated animate__fadeInUp">
+                    <h5><i class="bi bi-lightbulb"></i> ¿Sabías que...?</h5>
+                    <p>La familia es el primer espacio de formación humana y social. ¡Valórala y protégela como el tesoro más importante de la sociedad!</p>
+                    <button class="btn btn-custom btn-sm" onclick="alert('La familia es la base de toda sociedad próspera y justa.')">
+                        <i class="bi bi-info-circle"></i> Más información
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info-card animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">
+                    <h5><i class="bi bi-journal-text"></i> Cita Constitucional</h5>
+                    <p>"La familia es la base fundamental de la sociedad y merece protección especial del Estado." - Constitución de El Salvador</p>
+                    <span class="badge-custom"><i class="bi bi-patch-check"></i> Art. 32</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Separador visual -->
+    <div class="section-divider"></div>
+
+    <!-- Introducción -->
+    <div class="container">
+        <div class="content-section animate__animated animate__fadeInUp" id="introduccion">
+            <span class="badge-custom mb-3"><i class="bi bi-bookmark"></i> Capítulo Introductorio</span>
+            <h2 class="section-title"><i class="bi bi-book section-icon"></i>INTRODUCCIÓN</h2>
+            <p>En el corazón de toda sociedad late una fuerza primaria, un núcleo esencial que da forma a la identidad, los valores y el futuro de los pueblos: <strong>la familia</strong>.</p>
+            
+            <p>Lejos de ser una mera estructura social o una institución en evolución, la familia es célula viva y fundamental de la convivencia humana, el espacio sagrado donde la vida se recibe, se cultiva y se proyecta. Pero, sobre todo, es un proyecto de amor concebido por Dios desde el principio, un reflejo de su alianza fiel con la humanidad.</p>
+            
+            <p>En este blog, nos adentraremos en la profunda riqueza de la familia como realidad divina y social, exploraremos su dimensión económica y laboral, revisaremos su reconocimiento constitucional y legal, y reflexionaremos sobre el papel irrenunciable del Estado en su protección y promoción.</p>
+            
+            <div class="quote-box">
+                <span class="quote-icon">"</span>
+                Un viaje para redescubrir la familia como protagonista de la vida social y santuario de la vida humana.
+            </div>
+        </div>
+    </div>
+
+    <!-- Separador visual -->
+    <div class="section-divider"></div>
+
+    <!-- Capítulo I: La Familia en el Plan de Dios -->
+    <div class="container">
+        <div class="content-section animate__animated animate__fadeInUp" id="plan-dios">
+            <span class="badge-custom mb-3"><i class="bi bi-bookmark"></i> Capítulo I</span>
+            <h2 class="section-title"><i class="bi bi-heart section-icon"></i>LA FAMILIA EN EL PLAN DE DIOS</h2>
+            
+            <h3 class="section-subtitle">Una Verdad Grabada en la Creación</h3>
+            <p>Desde las primeras páginas de la Sagrada Escritura, Dios revela su designio amoroso sobre la familia:</p>
+            
+            <div class="quote-box">
+                <span class="quote-icon">"</span>
+                "Por eso el hombre deja a su padre y a su madre y se une a su mujer, y los dos se convierten en un solo ser" (Génesis 2,24).
+            </div>
+            
+            <p>Este pasaje no es solo una descripción, sino una institución divina. La unión entre el hombre y la mujer, complementarios en su dignidad y llamados a una comunión de personas, es el fundamento indisoluble de la familia. No es, por tanto, una invención cultural o una opción sociológica, sino una vocación inscrita en la naturaleza humana por el Creador.</p>
+            
+            <h3 class="section-subtitle">Jesucristo: Redentor y Confirmador de la Familia</h3>
+            <p>Jesús, con su enseñanza y presencia, eleva y redime la institución familiar. Al ser interrogado sobre el divorcio, responde remitiéndose al plan original:</p>
+            
+            <div class="quote-box">
+                <span class="quote-icon">"</span>
+                "Al principio, el Creador los hizo hombre y mujer... Y dijo: 'Por eso el hombre dejará a su padre y a su madre para unirse a su mujer, y los dos serán una sola carne'... Así que ya no son dos, sino uno solo. Por eso, lo que Dios ha unido, que no lo separe el hombre" (Mateo 19,4-6).
+            </div>
+            
+            <p>Con estas palabras, reafirma la indisolubilidad del matrimonio y devuelve a la familia su dignidad original.</p>
+            
+            <h3 class="section-subtitle">La Familia, Iglesia Doméstica</h3>
+            <p>San Pablo, por su parte, profundiza en el misterio esponsal comparándolo con la unión de Cristo y su Iglesia (Efesios 5,22-32). El amor conyugal se convierte así en un signo sagrado, un sacramento para los bautizados. La familia es "Iglesia doméstica", el primer lugar donde se transmite la fe, se practica la caridad y se aprende a orar.</p>
+            
+            <div class="quote-box">
+                <span class="quote-icon">"</span>
+                "En el matrimonio y en la familia se constituye un conjunto de relaciones interpersonales –relación conyugal, paternidad-maternidad, filiación, fraternidad– mediante las cuales toda persona humana queda introducida en la 'familia humana' y en la 'familia de Dios', que es la Iglesia" (Familiaris Consortio, 15).
+            </div>
+            
+            <img src="images/familia_cruz.jpg" 
+                 alt="Familia ante la cruz" 
+                 class="content-image animate__animated animate__fadeIn"
+                 onerror="this.src='https://via.placeholder.com/700x400/1de782/ffffff?text=Familia+y+Fe'">
+        </div>
+    </div>
+
+    <!-- Separador visual -->
+    <div class="section-divider"></div>
+
+    <!-- La Familia, Protagonista de la Vida Económica y Laboral -->
+    <div class="container">
+        <div class="content-section animate__animated animate__fadeInUp" id="economia">
+            <span class="badge-custom mb-3"><i class="bi bi-bookmark"></i> Capítulo II</span>
+            <h2 class="section-title"><i class="bi bi-cash-coin section-icon"></i>LA FAMILIA, PROTAGONISTA DE LA VIDA ECONÓMICA Y LABORAL</h2>
+            
+            <h3 class="section-subtitle">La Economía Nace en el Hogar</h3>
+            <p>Históricamente, la familia ha sido la primera célula económica. El hogar no es solo un espacio de consumo, sino también de producción, distribución y solidaridad. La economía, en sus orígenes, nació del trabajo doméstico, y en muchos contextos, sigue siéndolo (párrafo 248).</p>
+            
+            <h3 class="section-subtitle">El Trabajo: Condición para la Fundación y Estabilidad Familiar</h3>
+            <p>El trabajo es mucho más que un medio de ganarse la vida. Es la condición que hace posible fundar una familia y asegurar su sustento. Sin un trabajo digno, la familia "corre el peligro de no realizar plenamente sus finalidades" (párrafo 249). El desempleo no es solo una crisis económica; es una herida familiar que compromete el desarrollo de todos sus miembros.</p>
+            
+            <h3 class="section-subtitle">El Salario Familiar y el Derecho a la Propiedad</h3>
+            <p>La Doctrina Social de la Iglesia defiende el concepto de salario familiar (párrafo 250). Este debe ser:</p>
+            <ul>
+                <li><strong>Suficiente:</strong> Para mantener dignamente a la familia, no solo al individuo.</li>
+                <li><strong>Capaz de generar ahorro:</strong> Permitir la adquisición de propiedad como garantía de libertad y seguridad para el futuro.</li>
+            </ul>
+            <p>El derecho a la propiedad privada, por tanto, está íntimamente ligado a la familia, pues le ofrece un ámbito de autonomía y resguardo.</p>
+            
+            <h3 class="section-subtitle">La Inestimable Labor del Cuidado Familiar</h3>
+            <p>Un punto crucial es el reconocimiento social y económico del trabajo del hogar, realizado principalmente por la mujer (párrafo 251). Las labores de cuidado –educar, alimentar, limpiar, acompañar– son:</p>
+            <ul>
+                <li><strong>Eminentemente personalizantes:</strong> Forjan la calidad de la vida humana.</li>
+                <li><strong>Dignas de retribución:</strong> Deberían valorarse al menos igual que otras labores.</li>
+            </ul>
+            <p>Es una cuestión de justicia social que el Estado y la sociedad reconozcan y apoyen esta labor invisible pero fundamental.</p>
+            
+            <div class="video-container animate__animated animate__fadeIn">
+                <iframe src="https://www.youtube.com/embed/s7ZzcB0O1yY" 
+                        title="Agentes Económicos: Familia, Empresa y Estado" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Separador visual -->
+    <div class="section-divider"></div>
+
+    <!-- La Familia en el Ordenamiento Jurídico -->
+    <div class="container">
+        <div class="content-section animate__animated animate__fadeInUp" id="juridico">
+            <span class="badge-custom mb-3"><i class="bi bi-bookmark"></i> Capítulo III</span>
+            <h2 class="section-title"><i class="bi bi-file-earmark-text section-icon"></i>LA FAMILIA EN EL ORDENAMIENTO JURÍDICO</h2>
+            
+            <h3 class="section-subtitle">Reconocimiento Constitucional</h3>
+            <p>La familia recibe un lugar privilegiado en las constituciones de las naciones. Por ejemplo, la Constitución de la República de El Salvador establece de manera explícita:</p>
+            
+            <div class="quote-box">
+                <span class="quote-icon">"</span>
+                <strong>Art. 32:</strong> "La familia es la base fundamental de la sociedad y tendrá la protección del Estado, quien dictará la legislación necesaria y creará los organismos y servicios necesarios para su integración, bienestar y desarrollo social, cultural y económico. El fundamento legal de la familia es el matrimonio y descansa en la igualdad jurídica de los cónyuges. El Estado fomentará el matrimonio".
+                <br><br>
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <a href="https://www.asamblea.gob.sv/sites/default/files/documents/decretos/171117_072857074_archivo_documento_legislativo.pdf" 
+                       target="_blank" 
+                       class="btn btn-custom btn-lg"
+                       style="background: var(--primary-teal); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 0.5rem; font-weight: 600; box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3); display: inline-block; transition: all 0.3s;">
+                        <i class="bi bi-file-earmark-pdf"></i> 📄 Ver Art. 32 - Constitución Completa
+                    </a>
+                </div>
+            </div>
+            
+            <p>Este artículo es un claro mandato para que el poder público proteja, promueva y defienda activamente a la familia.</p>
+            
+            <h3 class="section-subtitle">Líneas de Demarcación y Identidad Familiar</h3>
+            <p>La ley debe distinguir con claridad entre la familia, fundada en el matrimonio entre hombre y mujer, y otras formas de convivencia (párrafo 253). Esta distinción no es discriminatoria, sino un acto de justicia y veracidad jurídica que protege una institución única y esencial para el bien común. Equiparar otras uniones al matrimonio debilita socialmente esta institución y desdibuja el derecho de los niños a crecer en un hogar estable con un padre y una madre.</p>
+            
+            <img src="images/familia_protegida.jpg" 
+                 alt="Familia protegida por las manos" 
+                 class="content-image animate__animated animate__fadeIn"
+                 onerror="this.src='https://via.placeholder.com/700x400/1de782/ffffff?text=Familia+Protegida'">
+        </div>
+    </div>
+
+    <!-- Separador visual -->
+    <div class="section-divider"></div>
+
+    <!-- El Deber del Estado ante la Familia -->
+    <div class="container">
+        <div class="content-section animate__animated animate__fadeInUp" id="estado">
+            <span class="badge-custom mb-3"><i class="bi bi-bookmark"></i> Capítulo IV</span>
+            <h2 class="section-title"><i class="bi bi-building section-icon"></i>EL DEBER DEL ESTADO ANTE LA FAMILIA</h2>
+            
+            <h3 class="section-subtitle">El Principio de Subsidiariedad</h3>
+            <p>El Estado no debe absorber, sustituir o reducir a la familia. Su papel es servirla según el principio de subsidiariedad: ayudar a las familias a realizar sus fines, interviniendo solo cuando estas no puedan hacerlo por sí mismas (párrafo 252).</p>
+            
+            <h3 class="section-subtitle">Políticas Familiares Efectivas</h3>
+            <p>El Estado debe implementar políticas familiares transversales que incluyan:</p>
+            <ul>
+                <li><strong>Apoyo económico directo:</strong> Como deducciones fiscales por hijos o subsidios familiares.</li>
+                <li><strong>Acceso a la vivienda digna.</strong></li>
+                <li><strong>Flexibilidad laboral</strong> que favorezca la conciliación entre trabajo y familia.</li>
+                <li><strong>Protección de la maternidad y la paternidad.</strong></li>
+                <li><strong>Libertad de educación,</strong> garantizando el derecho de los padres a elegir la educación moral y religiosa de sus hijos.</li>
+            </ul>
+            
+            <h3 class="section-subtitle">Defender la Vida y la Libertad</h3>
+            <p>El servicio del Estado a la familia implica:</p>
+            <ul>
+                <li>Proteger la vida humana desde la concepción hasta la muerte natural.</li>
+                <li>Combatir todo lo que daña a la familia: como el divorcio exprés, la ideología de género en la escuela o la cultura del descarte.</li>
+                <li>Fomentar el asociacionismo familiar (párrafo 247), para que las familias sean sujetos políticos activos y no solo objetos de políticas públicas.</li>
+            </ul>
+            
+            <div class="video-container animate__animated animate__fadeIn">
+                <iframe src="https://www.youtube.com/embed/GFALWNDw3ig" 
+                        title="Política Familia Escuela - Ministerio de Educación Chile" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Separador visual -->
+    <div class="section-divider"></div>
+
+    <!-- Conclusión -->
+    <div class="container">
+        <div class="content-section animate__animated animate__fadeInUp" id="conclusion">
+            <span class="badge-custom mb-3"><i class="bi bi-bookmark"></i> Capítulo Final</span>
+            <h2 class="section-title"><i class="bi bi-check-circle section-icon"></i>CONCLUSIÓN</h2>
+            
+            <p>La familia es el santuario de la vida y la esperanza del mundo. En un tiempo de confusión y crisis de valores, redescubrir su verdadera identidad es una tarea urgente para todos: padres, educadores, creyentes y gobernantes.</p>
+            
+            <h3 class="section-subtitle">Como ciudadanos, estamos llamados a:</h3>
+            <ul>
+                <li>Valorar y defender nuestra propia familia como primer compromiso.</li>
+                <li>Exigir a nuestros gobernantes políticas públicas que sostengan y no erosionen la institución familiar.</li>
+                <li>Ser protagonistas en la construcción de una cultura familiar solidaria, donde las familias se apoyen entre sí y sean luz en la sociedad.</li>
+            </ul>
+            
+            <div class="quote-box">
+                <span class="quote-icon">"</span>
+                "Las familias deben crecer en la conciencia de ser 'protagonistas' de la llamada 'política familiar' y asumir la responsabilidad de transformar la sociedad" (párrafo 247).
+            </div>
+            
+            <p><strong>El futuro no se escribe en los parlamentos o los mercados, sino en los hogares.</strong> Invertir en la familia es la más sabia y rentable de todas las inversiones, porque es invertir en el ser humano mismo.</p>
+        </div>
+    </div>
+
+    <!-- Separador visual -->
+    <div class="section-divider"></div>
+
+    <!-- Opinión Grupal -->
+    <div class="container">
+        <div class="content-section animate__animated animate__fadeInUp" id="opinion">
+            <span class="badge-custom mb-3"><i class="bi bi-bookmark"></i> Reflexión Colectiva</span>
+            <h2 class="section-title"><i class="bi bi-chat-left-quote section-icon"></i>OPINIÓN GRUPAL: ¿CÓMO DEBE EL ESTADO VELAR POR LA FAMILIA?</h2>
+            
+            <div class="opinion-card">
+                <h5>👩 Karen Carballo</h5>
+                <p>"Para mí, el Estado debería ser como un buen vecino: que esté ahí cuando se necesita, pero sin meterse donde no lo llaman. Debería asegurarse de que tengamos trabajos estables y salarios justos para mantener a nuestras familias sin angustias."</p>
+            </div>
+            
+            <div class="opinion-card">
+                <h5>👨 Miguel Acuña</h5>
+                <p>"Coincido con Karen. Yo agregaría que es fundamental que el Estado respete nuestras decisiones como padres. A veces siento que quieren enseñarles a nuestros hijos cosas con las que no estamos de acuerdo. Deberían apoyar, no imponer."</p>
+            </div>
+            
+            <div class="opinion-card">
+                <h5>👩 Verónica Delgado</h5>
+                <p>"Yo como madre siento que el trabajo en casa es invisible. El Estado debería valorar más este trabajo, quizás con reconocimiento económico o apoyos concretos. Y que las leyes protejan la vida desde el primer momento, eso es esencial."</p>
+            </div>
+            
+            <div class="opinion-card">
+                <h5>👨 Walter Cardona</h5>
+                <p>"Creo que el Estado debería facilitar que las familias nos organicemos entre nosotros. Menos burocracia y más apoyo real: guarderías accesibles, flexibilidad laboral, y que no nos ahoguen con impuestos. La familia ya tiene suficientes desafíos."</p>
+            </div>
+            
+            <div class="quote-box mt-4">
+                <span class="quote-icon">"</span>
+                <strong>Nuestra visión compartida:</strong> Queremos un Estado que camine junto a las familias, no que las sustituya. Que entienda que nuestro hogar es nuestro primer espacio de libertad, y que merecemos leyes que protejan eso, no que lo pongan en riesgo.
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h4 style="color: var(--primary-teal); margin-bottom: 1rem;">Universidad Católica de El Salvador</h4>
+            <p>Facultad de Ingeniería y Arquitectura | Ética Social | 2025</p>
+            <p>&copy; Todos los derechos reservados</p>
+            <div class="mt-3">
+                <button class="btn btn-custom" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️ Volver arriba</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Script para tooltips y efectos adicionales -->
+    <script>
+        // Inicializar tooltips de Bootstrap
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+        
+        // Barra de progreso de lectura
+        window.addEventListener('scroll', function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.querySelector('.progress-bar-fill').style.width = scrolled + '%';
+        });
+        
+        // Botón scroll to top
+        const scrollTopBtn = document.querySelector('.scroll-top-btn');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animación al hacer scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate__animated', 'animate__fadeInUp');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.content-section').forEach((section) => {
+            observer.observe(section);
+        });
+        
+        // Animación de letras individuales
+        function wrapLetters(element) {
+            const text = element.textContent;
+            element.innerHTML = '';
+            let delay = 0;
+            
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const span = document.createElement('span');
+                
+                if (char === ' ') {
+                    span.innerHTML = '&nbsp;';
+                } else {
+                    span.textContent = char;
+                    span.style.animationDelay = `${delay * 0.05}s`;
+                    delay++;
+                }
+                
+                element.appendChild(span);
+            }
+        }
+        
+        // Aplicar animación a títulos
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle) {
+                wrapLetters(heroTitle);
+            }
+            
+            // Opcional: aplicar a todos los títulos de sección
+            document.querySelectorAll('.section-title').forEach(title => {
+                // Guardar el contenido del icono
+                const icon = title.querySelector('.section-icon');
+                const iconHTML = icon ? icon.outerHTML : '';
+                
+                // Obtener solo el texto sin el icono
+                const textNode = Array.from(title.childNodes).find(node => node.nodeType === 3);
+                if (textNode) {
+                    const text = textNode.textContent.trim();
+                    title.innerHTML = iconHTML;
+                    
+                    const textSpan = document.createElement('span');
+                    textSpan.style.marginLeft = '0.5rem';
+                    title.appendChild(textSpan);
+                    
+                    let delay = 0;
+                    for (let i = 0; i < text.length; i++) {
+                        const char = text[i];
+                        const span = document.createElement('span');
+                        
+                        if (char === ' ') {
+                            span.innerHTML = '&nbsp;';
+                        } else {
+                            span.textContent = char;
+                            span.style.animationDelay = `${delay * 0.03}s`;
+                            delay++;
+                        }
+                        
+                        textSpan.appendChild(span);
+                    }
+                }
+            });
+        });
+        
+        // Smooth scroll para los links de navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 70; // Altura del navbar
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
